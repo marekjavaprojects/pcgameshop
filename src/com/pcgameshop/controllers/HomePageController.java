@@ -22,11 +22,10 @@ public class HomePageController {
 	public String showHomePage(Model model) {
 		
 		List<Product> products = productService.getProducts();
-		for(Product p :products) {
-			System.out.println(p);
-		}
 		
-		return "index";
+		model.addAttribute("products", products);
+		
+		return "homepage";
 		
 	}
 

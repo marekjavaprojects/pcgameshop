@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,89 +65,53 @@
 		<!-- Jumbotron Header -->
 		<header class="jumbotron hero-spacer">
 			<h1>Welcome in PC GAME Shop!</h1>
-			<hr>
+		</header>
+		<hr>
 
-			<!-- Title
+		<!-- Title
 		 -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3>Latest Games</h3>
+			</div>
+		</div>
+		<!-- /.row -->
+
+		<!-- Page Features -->
+		<div class="row text-center">
+			<c:forEach var="product" items="${products}">
+
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+
+						<img src="${pageContext.request.contextPath}/resources/games_images${product.pathToImage}">
+						<p>${product.pathToImage}</p>
+						<div class="caption">
+							<h3>${product.productName}</h3>
+							<p>Product description</p>
+							<p>
+								<a href="#" class="btn btn-primary">Sign up and buy now!</a> <a
+									href="#" class="btn btn-default">More Info</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</c:forEach>
+		</div>
+
+		<!-- /.row -->
+
+		<hr>
+
+		<!-- Footer -->
+		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<h3>Latest Games</h3>
+					<p>Copyright &copy; Your Website 2014</p>
 				</div>
 			</div>
-			<!-- /.row -->
-
-			<!-- Page Features -->
-			<div class="row text-center">
-
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="http://placehold.it/800x500" alt="">
-						<div class="caption">
-							<h3>Product name</h3>
-							<p>Product description</p>
-							<p>
-								<a href="#" class="btn btn-primary">Sign up and buy now!</a> <a href="#"
-									class="btn btn-default">More Info</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="http://placehold.it/800x500" alt="">
-						<div class="caption">
-							<h3>Product name</h3>
-							<p>Product description</p>
-							<p>
-								<a href="#" class="btn btn-primary">Sign up and buy now!</a> <a href="#"
-									class="btn btn-default">More Info</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="http://placehold.it/800x500" alt="">
-						<div class="caption">
-							<h3>Product name</h3>
-							<p>Product description</p>
-							<p>
-								<a href="#" class="btn btn-primary">Sign up and buy now!</a> <a href="#"
-									class="btn btn-default">More Info</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="http://placehold.it/800x500" alt="">
-						<div class="caption">
-							<h3>Product name</h3>
-							<p>Product description</p>
-							<p>
-								<a href="#" class="btn btn-primary">Sign up and buy now!</a> <a href="#"
-									class="btn btn-default">More Info</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<!-- /.row -->
-
-			<hr>
-
-			<!-- Footer -->
-			<footer>
-				<div class="row">
-					<div class="col-lg-12">
-						<p>Copyright &copy; Your Website 2014</p>
-					</div>
-				</div>
-			</footer>
+		</footer>
 	</div>
 	<!-- /.container -->
 

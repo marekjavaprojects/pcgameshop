@@ -22,7 +22,7 @@ public class ProductDAOImpl implements ProductDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 
 		// create a query .. sort by last name
-		Query<Product> query = currentSession.createQuery("from Customer order by lastName", Product.class);
+		Query<Product> query = currentSession.createQuery("from Product", Product.class);
 
 		// execute query and get result list
 		List<Product> products = query.getResultList();
