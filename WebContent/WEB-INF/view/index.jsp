@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="utf-8">
@@ -9,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Book Shop Home Page</title>
+<title>PC GAME Shop Home Page</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
@@ -61,14 +60,14 @@
 
 		<!-- Jumbotron Header -->
 		<header class="jumbotron hero-spacer">
-			<h1>Welcome in Book Shop!</h1>
+			<h1>Welcome in PC GAME Shop!</h1>
 			<hr>
 
 			<!-- Title
 		 -->
 			<div class="row">
 				<div class="col-lg-12">
-					<h3>Latest Books</h3>
+					<h3>Latest Games</h3>
 				</div>
 			</div>
 			<!-- /.row -->

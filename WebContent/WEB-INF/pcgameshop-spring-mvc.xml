@@ -31,9 +31,9 @@
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/book_shop?useSSL=false" />
-        <property name="user" value="bookshop" />
-        <property name="password" value="bookshop" /> 
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/pc_game_shop?useSSL=false" />
+        <property name="user" value="pcgameshop" />
+        <property name="password" value="pcgameshop" /> 
 
         <!-- these are connection pool properties for C3P0 -->
         <property name="minPoolSize" value="5" />
@@ -45,7 +45,7 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
-		<property name="packagesToScan" value="com.bookshop" />
+		<property name="packagesToScan" value="com.pcgameshop" />
 		<property name="hibernateProperties">
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
