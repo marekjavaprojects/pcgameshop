@@ -11,6 +11,9 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product {
 
+	public Product() {
+		
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_id")
@@ -30,6 +33,9 @@ public class Product {
 
 	@Column(name = "path_to_image")
 	private String pathToImage;
+
+	@Column(name = "date_added")
+	private String dateAdded;
 
 	public String getProductName() {
 		return productName;
@@ -75,10 +81,18 @@ public class Product {
 		return productId;
 	}
 
+	public String getDateAdded() {
+		return dateAdded;
+	}
+
+	public void setDateAdded(String dateAdded) {
+		this.dateAdded = dateAdded;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category
 				+ ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", pathToImage=" + pathToImage + "]";
 	}
-	
+
 }
