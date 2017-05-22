@@ -72,12 +72,10 @@ public class ProductDAOImpl implements ProductDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		String hql = "from Product where productName like :productName ";
 		Query<Product> queryForProductsSearchedByProductName = currentSession.createQuery(hql, Product.class);
-		queryForProductsSearchedByProductName.setParameter("productName", "%" + productName + "%");
+		queryForProductsSearchedByProductName.setParameter("productName", productName + "%");
 
 		List<Product> productsByCategory = queryForProductsSearchedByProductName.getResultList();
-		for(Product p : productsByCategory) {
-			System.out.println(p);
-		}
+
 		return productsByCategory;
 		
 		

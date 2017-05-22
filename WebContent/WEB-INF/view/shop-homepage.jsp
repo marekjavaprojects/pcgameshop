@@ -85,7 +85,7 @@
 							class="list-group-item">${category}</a>
 
 					</c:forEach>
-					<form action="search" method="get">
+					<form action="${pageContext.request.contextPath}/search" method="get">
 
 						<input type="text" class="form-control"
 							placeholder="Search for..." name="productName"> <span
