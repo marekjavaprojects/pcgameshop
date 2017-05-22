@@ -33,7 +33,6 @@
     <![endif]-->
 
 </head>
-
 <body>
 	<div class="page-header" align="center">
 		<h1>Welcome in PC GAME Shop!</h1>
@@ -76,16 +75,17 @@
 			<div class="col-md-3">
 				<div class="list-group">
 
-					<a href="${pageContext.request.contextPath}/allProducts"
+					<a href="${pageContext.request.contextPath}/products/allProducts"
 						class="list-group-item">SHOW ALL</a>
 
 					<c:forEach var="category" items="${categories}">
 
-						<a href=<c:url value="/category/${category}"></c:url>
+						<a href=<c:url value="/products/${category}"></c:url>
 							class="list-group-item">${category}</a>
 
 					</c:forEach>
-					<form action="${pageContext.request.contextPath}/search" method="get">
+					<form action="${pageContext.request.contextPath}/products/search"
+						method="get">
 
 						<input type="text" class="form-control"
 							placeholder="Search for..." name="productName"> <span
