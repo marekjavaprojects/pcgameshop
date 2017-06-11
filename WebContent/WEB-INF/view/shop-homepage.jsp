@@ -98,35 +98,26 @@
 				</div>
 
 			</div>
-			<c:choose>
-				<c:when test="${showAll}">
-					<h3>Browse games!</h3>
-				</c:when>
-				<c:when test="${showFoundProducts}">
-					<h3>Search results for ${productName}</h3>
-				</c:when>
-				<c:otherwise>
-					<h3>
-						Latest games!<span class="label label-default">New</span>
-					</h3>
-				</c:otherwise>
-			</c:choose>
-			<c:forEach var="productByName" varStatus="status"
-				items="${productsByName}">
-				<div class="col-md-9">
 
-					<div class="row">
+			<h3>
+				${productListLabel}
+			</h3>
 
+
+			<div class="col-md-9">
+
+				<div class="row">
+					<c:forEach var="product" varStatus="status" items="${products}">
 						<div class="col-sm-4 col-lg-4 col-md-4">
 							<div class="thumbnail">
 								<img
-									src="${pageContext.request.contextPath}/resources/games_images${productByName.pathToImage}"
+									src="${pageContext.request.contextPath}/resources/games_images${product.pathToImage}"
 									alt="" style="max-height: 141px; max-width: 106px;">
 								<div class="caption">
 									<h4>
-										<a href="#">${productByName.productName}</a>
+										<a href="#">${product.productName}</a>
 									</h4>
-									<h4 class="pull-right">${productByName.unitPrice}</h4>
+									<h4 class="pull-right">${product.unitPrice}</h4>
 
 									<p>
 										See more snippets like this online store item at <a
@@ -137,99 +128,11 @@
 							</div>
 
 						</div>
-					</div>
-				</div>
-			</c:forEach>
-			<div class="col-md-9">
-
-
-				<div class="row">
-
-					<c:choose>
-						<c:when test="${showAll}">
-							<c:forEach var="product" varStatus="status"
-								items="${allProducts}">
-								<div class="col-sm-4 col-lg-4 col-md-4">
-									<div class="thumbnail">
-										<img
-											src="${pageContext.request.contextPath}/resources/games_images${product.pathToImage}"
-											alt="" style="max-height: 141px; max-width: 106px;">
-										<div class="caption">
-											<h4>
-												<a href="#">${product.productName}</a>
-											</h4>
-											<h4 class="pull-right">${product.unitPrice}</h4>
-
-											<p>
-												See more snippets like this online store item at <a
-													target="_blank" href="http://www.bootsnipp.com">Bootsnipp
-													- http://bootsnipp.com</a>.
-											</p>
-										</div>
-									</div>
-
-								</div>
-							</c:forEach>
-						</c:when>
-						<c:when test="${showLatestProducts}">
-							<c:forEach var="latestProduct" varStatus="status"
-								items="${latestFourProducts}">
-
-								<div class="col-sm-4 col-lg-4 col-md-4">
-									<div class="thumbnail">
-										<img
-											src="${pageContext.request.contextPath}/resources/games_images${latestProduct.pathToImage}"
-											alt="" style="max-height: 141px; max-width: 106px;">
-										<div class="caption">
-											<h4>
-												<a href="#">${latestProduct.productName}</a>
-											</h4>
-											<h4 class="pull-right">${latestProduct.unitPrice}</h4>
-
-											<p>
-												See more snippets like this online store item at <a
-													target="_blank" href="http://www.bootsnipp.com">Bootsnipp
-													- http://bootsnipp.com</a>.
-											</p>
-										</div>
-									</div>
-
-								</div>
-
-							</c:forEach>
-						</c:when>
-						<c:when test="${showProductsByCategory}">
-							<c:forEach var="productByCategory" varStatus="status"
-								items="${productsByCategory}">
-
-								<div class="col-sm-4 col-lg-4 col-md-4">
-									<div class="thumbnail">
-										<img
-											src="${pageContext.request.contextPath}/resources/games_images${productByCategory.pathToImage}"
-											alt="" style="max-height: 141px; max-width: 106px;">
-										<div class="caption">
-											<h4>
-												<a href="#">${productByCategory.productName}</a>
-											</h4>
-											<h4 class="pull-right">${productByCategory.unitPrice}</h4>
-
-											<p>
-												See more snippets like this online store item at <a
-													target="_blank" href="http://www.bootsnipp.com">Bootsnipp
-													- http://bootsnipp.com</a>.
-											</p>
-										</div>
-									</div>
-
-								</div>
-
-							</c:forEach>
-						</c:when>
-					</c:choose>
+					</c:forEach>
 
 				</div>
+
 			</div>
-
 		</div>
 
 	</div>

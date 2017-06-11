@@ -15,8 +15,8 @@ import com.pcgameshop.service.ProductService;
 
 @Controller
 public class HomePageController {
-
-	private boolean showLatestProducts;
+	
+	private String productListLabel;
 
 	@Autowired
 	ProductService productService;
@@ -24,14 +24,13 @@ public class HomePageController {
 	@GetMapping("/")
 	public String showHomePageWithFourLatestProducts(Model model) {
 
-		showLatestProducts = true;
 		List<Product> latestFourProducts = productService.getFourLatestProducts();
 		Set<String> categories = productService.fetchCategoriesFromProducts(productService.getProducts());
+		productListLabel = "Latest Games!";
 
-		model.addAttribute("latestFourProducts", latestFourProducts);
+		model.addAttribute("products", latestFourProducts);
 		model.addAttribute("categories", categories);
-		model.addAttribute("showLatestProducts", showLatestProducts);
-
+		model.addAttribute("productListLabel", productListLabel);
 		return "shop-homepage";
 	}
 }
